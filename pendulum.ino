@@ -1,5 +1,5 @@
 /*  01 08 2022 
-PENDULUM
+PENDULUM - by Francesco Ganassin
     a pendulum with these elements
     Leonardo Micro Pro
     MPU6050 gyro
