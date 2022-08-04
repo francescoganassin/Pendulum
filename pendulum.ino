@@ -37,6 +37,8 @@ Oscil<SIN512_NUM_CELLS, AUDIO_RATE> aSin1(SIN512_DATA);
 Oscil<SIN512_NUM_CELLS, AUDIO_RATE> aSin2(SIN512_DATA);
 Oscil<SIN512_NUM_CELLS, AUDIO_RATE> aSin3(SIN512_DATA);
 Oscil<SIN512_NUM_CELLS, AUDIO_RATE> aSin4(SIN512_DATA);
+Oscil<SIN512_NUM_CELLS, AUDIO_RATE> aSin5(SIN512_DATA);
+Oscil<SIN512_NUM_CELLS, AUDIO_RATE> aSin6(SIN512_DATA);
 
 void setup_accelero(){
   initialize_twi_nonblock();
@@ -97,6 +99,8 @@ void setup(){
   aSin2.setFreq(2794);
   aSin3.setFreq(1865);
   aSin4.setFreq(2349);
+  aSin5.setFreq(3720);
+  aSin6.setFreq(4700);
  
 
   startMozzi(CONTROL_RATE);
@@ -153,7 +157,9 @@ AudioOutput_t updateAudio(){
     aSin1.next() * (gyroz) +
     aSin2.next() * (gyroy) +
     aSin3.next() * (gyrox) +
-    aSin4.next() * (gyroz) ;
+    aSin4.next() * (gyroz) +
+    aSin5.next() * (gyroy) +
+    aSin6.next() * (gyrox);
   
   return MonoOutput::fromAlmostNBit(18, asig);
 }
