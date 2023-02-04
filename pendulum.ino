@@ -1,10 +1,10 @@
-/*  01 08 2022 
-PENDULUM - by Francesco Ganassin
-    a pendulum with these elements
-    Leonardo Micro Pro
-    MPU6050 gyro
-    MOZZI byte
-    Li-Po battery
+/*  PENDULUM 
+
+Pendulum by Francesco Ganassin is a small, handy soundscaper
+
+Built with Leonardo Micro Pro retrieving data by MPU6050 gyro
+sounds on MOZZI BYTE, with Mozzi library
+powered with a Li-Po battery
     
     based on Tim Barrass 2012, CC by-nc-sa codes
     and other non blocking codes for MPU6050
@@ -95,12 +95,12 @@ void acc_writeTo(byte address, byte val) {
 }
 
 void setup(){
-  aSin1.setFreq(4435);
-  aSin2.setFreq(2794);
-  aSin3.setFreq(1865);
-  aSin4.setFreq(2349);
-  aSin5.setFreq(3720);
-  aSin6.setFreq(4700);
+  aSin1.setFreq(1175);
+  aSin2.setFreq(2350);
+  aSin3.setFreq(1760);
+  aSin4.setFreq(3136);
+  aSin5.setFreq(3520);
+  aSin6.setFreq(699);
  
 
   startMozzi(CONTROL_RATE);
@@ -154,11 +154,11 @@ void updateControl(){
 
 AudioOutput_t updateAudio(){
   long asig = (long)
-    aSin1.next() * (gyroz) +
-    aSin2.next() * (gyroy) +
-    aSin3.next() * (gyrox) +
-    aSin4.next() * (gyroz) +
-    aSin5.next() * (gyroy) +
+    aSin1.next() * (gyroz)+
+    aSin2.next() * (gyroy)+
+    aSin3.next() * (gyrox)+
+    aSin4.next() * (gyroz)+
+    aSin5.next() * (gyroy)+
     aSin6.next() * (gyrox);
   
   return MonoOutput::fromAlmostNBit(18, asig);
