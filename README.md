@@ -1,5 +1,5 @@
 Pendulum is a small, handy soundscaper.
-Built with Leonardo Micro Pro retrieving data by MPU6050 gyro, 
+Built with a Pro Micro retrieving data by MPU6050 gyro, 
 sounds on MOZZI BYTE, with Mozzi library,
 powered with a Li-Po battery.
 based on Tim Barrass 2012, CC by-nc-sa codes
