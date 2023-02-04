@@ -1,2 +1,6 @@
-# pendulum
-Small pendulum synth - Leonardo Micro Pro, MPU6050, Mozzi library
+Pendulum is a small, handy soundscaper.
+Built with Leonardo Micro Pro retrieving data by MPU6050 gyro, 
+sounds on MOZZI BYTE, with Mozzi library,
+powered with a Li-Po battery.
+based on Tim Barrass 2012, CC by-nc-sa codes
+and other non blocking codes for MPU6050
